@@ -1,0 +1,1 @@
+# Python requirements - pinned versions are added on Day 2 after a compatibility test.

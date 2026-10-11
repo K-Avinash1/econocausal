@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+# Node / React
+node_modules/
+dist/
+build/
+# Secrets - never commit these
+.env
+.env.*
+*.pem
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+# Large generated data (regenerate with the generator script)
+data/generated/*.csv
+data/evaluation/*.csv
