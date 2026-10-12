@@ -1,6 +1,6 @@
 # PROJECT_CONTEXT.md - EconoCausal
 
-## Checkpoint 1 - 11 Oct 2026 (Day 1, Phase 1: Foundations)
+## Checkpoint 2 - end of Day 1 (11-12 Oct 2026, Phase 1: Foundations)
 
 **Project:** EconoCausal: Dynamic Pricing via Double Machine Learning (Infotact Solutions)
 **Objective:** per-customer discount effects (EconML DML), validation (DoWhy, PSM, uplift/Qini),
@@ -10,47 +10,48 @@ budget allocation (SciPy), React + Plotly dashboard over a Python REST API.
 
 ### Completed work (verified from terminal output)
 - Project started from scratch; no earlier files, code or repository existed.
-- Local repository created at E:\econocausal on Avinash's machine.
-- Initial commit c66da8a "Initial project skeleton" (14 files) pushed to GitHub.
-- Branches main, avinash-dev and zahra-dev exist locally and on origin.
 - Repository: https://github.com/K-Avinash1/econocausal (public).
+- Avinash's local copy: E:\econocausal. Zahra's local copy: C:\Projects\econocausal.
+- Commits (verified with git log):
+  - c66da8a  Avinash K  2026-10-11 18:25 +0530  "Initial project skeleton" (on main; 14 files)
+  - e32e384  Avinash K  "Day 1: record verified repository and environment status" (on avinash-dev, pushed)
+  - c88197b  zfathima353-byte  2026-10-11 23:57 +0400  "Day 1: document frontend environment and setup" (on zahra-dev, pushed)
+- Branches main, avinash-dev, zahra-dev exist locally and on origin. Nothing merged into main yet
+  beyond the initial commit.
 
-### Files
-README.md, PROJECT_CONTEXT.md, WORK_DISTRIBUTION.md, .gitignore,
-backend/ (econocausal/, api/, tests/, requirements.txt), frontend/, data/generated/,
-data/evaluation/, docs/, scripts/ (README placeholders only; no code yet).
+### Environments (verified)
+- Avinash (Windows): Git 2.53.0, VS Code 1.141.0, Python 3.11.9. Node.js not installed yet.
+- Zahra (Windows): Git 2.56.0, Node v24.21.0, npm 11.19.0. PowerShell script policy set to
+  RemoteSigned for the current user so npm runs.
+- Zahra's computer clock is UTC+4; Avinash's is UTC+5:30. Commit dates near midnight can
+  fall on different days depending on timezone.
 
 ### Decisions and assumptions
 - Repository public. Branches: main (reviewed work), avinash-dev, zahra-dev.
-- Avinash's tools: Git 2.53.0, VS Code 1.141.0, Python 3.11.9. Node.js not installed yet.
 - Python 3.11.9 proposed as project version (instead of 3.12); compatibility with
   EconML/DoWhy to be tested on Day 2, not yet confirmed.
-- Dataset: synthetic first, fixed seed, true effects stored separately in data/evaluation/.
+- Dataset: synthetic first, fixed seed, true effects in data/evaluation/, separate from observed data.
 - Frontend app is created when frontend work starts (Day 4 layout); no practice starter.
 
 ### Tests
 - None run yet.
 
 ### Known issues / limitations
-- Node.js missing on Avinash's machine (needed later for integration testing).
-- Zahra's setup (GitHub invite, Node, clone) not yet verified.
-- Infotact dashboard connection and branch detection not yet verified.
-
-### Git status
-- Verified: HEAD on avinash-dev at c66da8a; all three branches at c66da8a; remote origin set.
-- Nothing merged yet beyond the initial commit on main.
+- Node.js not yet installed on Avinash's machine (needed later for integration testing).
+- Not yet verified: Infotact dashboard connection and branch detection for both branches.
+- Not yet verified: that Zahra's Git email is linked to her GitHub account (commit avatar).
+- Which timezone the dashboard uses to assign commits to days is unknown.
 
 ### Remaining tasks
-- Zahra: accept invite, install Node LTS, clone repo, switch to zahra-dev, record versions.
-- Avinash: connect repo/branch to Infotact dashboard and check both branches are detected.
+- Connect avinash-dev and zahra-dev to the Infotact dashboard and confirm both are detected.
 - Day 2: dataset schema and reproducible synthetic data generator.
 
 ### Next step - Avinash
-- Commit this file on avinash-dev, then connect to the dashboard and report what it shows.
-- Install Node.js LTS before Day 4.
+- Confirm the dashboard shows both branches; confirm Python 3.11.9 as the project version;
+  finalise the dataset schema decisions for Day 2.
 
 ### Next step - Zahra
-- Complete Day 1 setup (see Remaining tasks) and send her version outputs.
+- Connect zahra-dev to the dashboard; read the Day 2 task block when sent.
 
 ### Questions requiring approval
 - Confirm Python 3.11.9 as the project version.
