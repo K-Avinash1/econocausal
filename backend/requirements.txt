@@ -1,1 +1,13 @@
-# Python requirements - pinned versions are added on Day 2 after a compatibility test.
+# Versions confirmed working together on Python 3.11.9 (Windows), by running
+# scripts/check_environment.py on 17-18 Oct 2026. Install with:
+#   pip install -r backend/requirements.txt
+numpy==2.4.6
+pandas==3.0.6
+scikit-learn==1.9.1
+scipy==1.15.3
+econml==0.17.0
+dowhy==0.14
+plotly==7.1.0
+fastapi==0.143.0
+uvicorn==0.54.0
+pytest==9.1.1
