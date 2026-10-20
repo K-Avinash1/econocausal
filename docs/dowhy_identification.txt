@@ -1,0 +1,29 @@
+DoWhy identification of the effect of discount_offered on purchased
+(graph from backend/econocausal/causal_graph.py, 5000 simulated customers, seed 42)
+
+Estimand type: EstimandType.NONPARAMETRIC_ATE
+
+### Estimand : 1
+Estimand name: backdoor
+Estimand expression:
+         d                                                                                                                                                   
+───────────────────(E[purchased|email_engagement,days_since_last_⟨purchase,⟩_order_value_past,region,tenure_months,past_purchases_12m,is_loyalty_member,age])
+d[discount_offered]                                                                                                                                          
+Estimand assumption 1, Unconfoundedness: If U→{discount_offered} and U→purchased then P(purchased|discount_offered,email_engagement,days_since_last_purchase,avg_order_value_past,region,tenure_months,past_purchases_12m,is_loyalty_member,age,U) = P(purchased|discount_offered,email_engagement,days_since_last_purchase,avg_order_value_past,region,tenure_months,past_purchases_12m,is_loyalty_member,age)
+
+### Estimand : 2
+Estimand name: iv
+No such variable(s) found!
+
+### Estimand : 3
+Estimand name: frontdoor
+No such variable(s) found!
+
+### Estimand : 4
+Estimand name: general_adjustment
+Estimand expression:
+         d                                                                                                                                                   
+───────────────────(E[purchased|age,email_engagement,days_since_last_purchase,region,tenure_months,past_purchases_12m,is_loyalty_⟨member,⟩_order_value_past])
+d[discount_offered]                                                                                                                                          
+Estimand assumption 1, Unconfoundedness: If U→{discount_offered} and U→purchased then P(purchased|discount_offered,age,email_engagement,days_since_last_purchase,region,tenure_months,past_purchases_12m,is_loyalty_member,avg_order_value_past,U) = P(purchased|discount_offered,age,email_engagement,days_since_last_purchase,region,tenure_months,past_purchases_12m,is_loyalty_member,avg_order_value_past)
+
