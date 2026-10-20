@@ -68,3 +68,48 @@ Generated CSVs, docs/eda_report.md and docs/validation_messages.md must be produ
 
 ### Questions requiring approval
 - None open.
+
+---
+
+## Checkpoint 4 - 20 October 2026 (catch-up: original Days 2-3 closed, Days 4-5 delivered)
+
+(This checkpoint supersedes the "awaiting verification / not yet committed" status in Checkpoint 3.)
+
+### Schedule status
+- The 19 Oct package (Days 4+5) was delivered on 19 Oct evening but not worked on that day, so work starts on 20 Oct: we are one day behind the catch-up table above.
+- Per the standing rule, the slip is absorbed by the buffer on 25-26 Oct. Revised plan (needs Avinash's OK):
+  20 Oct Day 4+5 (Day 6 is largely covered because /health and /validate exist), 21 Oct Day 7+8, 22 Oct Day 9+10,
+  23 Oct Day 11+12, 24 Oct Day 13+14, 25 Oct Day 15+16, 26 Oct Day 17 (status, rehearsal). Mid-review 27-29 Oct unchanged. No buffer is left after this.
+
+### Verified (evidence seen in pasted output / screenshots)
+- Avinash's machine: `pytest` 32 passed; data, EDA and sample files generated; commits a131042 and eff5eb6 pushed to avinash-dev.
+- PR #1 (avinash-dev -> main) merged ("Merge pull request #1 from K-Avinash1/avinash-dev", main at bf92890).
+- Zahra: `docs/upload_feedback.md` committed (ca727a8) and pushed. PR #2 "Day2&Day3" (4 commits, zahra-dev -> main; files frontend_setup.md, upload_feedback.md, upload_requirements.md) is merged. It was merged from Zahra's own account, not by Avinash.
+- Original Days 2 and 3 are complete for both members.
+
+### Implemented and tested only in Claude's workspace (NOT yet run on the team's machines)
+- `backend/econocausal/causal_graph.py`, `docs/causal_graph.md` (draft assumptions for Avinash's review)
+- `backend/econocausal/upload_service.py`, `backend/api/main.py` (/health, /validate), `docs/api_contract.md`
+- Tests: with pytest unavailable, the test functions were called directly: causal graph 7, upload service 7, plus the earlier 32 (46 in total) all passed on Python 3.13. One causal-graph test needs pytest's `monkeypatch`; it was run with a hand-made stand-in. `pytest` itself has NOT been run on these.
+- Frontend: Zahra's paste-ready code (ZAHRA_DAY4_5.md) was bundled with esbuild (React 19.2.8) and opened in headless Chromium against a Starlette stand-in server that calls the real `validate_csv_bytes` (FastAPI is not installable in Claude's workspace). All 12 sample files, a non-CSV file and the "server not running" case showed the messages in `docs/upload_feedback.md`; no JavaScript errors. This found and fixed one bug (page scrolled sideways on narrow screens).
+- NOT verified anywhere: `backend/api/main.py` under real FastAPI/uvicorn, `scripts/check_causal_graph.py` (needs DoWhy), a Vite install on Zahra's machine.
+
+### Decisions
+- /validate takes the raw CSV body (no multipart dependency) and pulls part of Day 6 forward so the upload page shows the validator's real messages.
+- Upload size limit 10 MB: proposed, awaiting Avinash's confirmation.
+- Graph: all 8 attributes are confounders and effect modifiers; `order_value`, `discount_cost`, `customer_id` excluded.
+
+### Known issues / limitations
+- Dashboard timezone for commit days and the 14-day mid-review window: not confirmed.
+- Node.js not installed on Avinash's machine (not needed until he runs the frontend).
+- Main has no frontend app yet; the React app is created on zahra-dev.
+- The "Run analysis" button only shows a "not connected yet" notice; analysis is built in later phases.
+
+### Next step - Avinash
+- Sync avinash-dev with main, apply the update, run pytest, run `scripts/check_causal_graph.py`, start the API, check /health and /validate, review docs/causal_graph.md, commit, push, open PR, merge, tell Zahra.
+
+### Next step - Zahra
+- Day 4: create the React app and layout, commit. Day 5: upload page, commit, then test against the real backend once Avinash has merged, open PR "Day4&Day5" (Avinash merges).
+
+### Questions requiring approval
+- Revised schedule above (uses the buffer). 10 MB upload limit. Attribute-to-attribute edges in the causal graph.
