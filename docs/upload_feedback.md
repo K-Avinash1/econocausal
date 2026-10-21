@@ -39,7 +39,7 @@ validator really produces for each file in `data/samples/`.
 | Situation | Message |
 |---|---|
 | The chosen file is not a .csv | Please choose a CSV file (a file whose name ends in .csv). |
-| The file is larger than 10 MB (proposed limit, approved by Avinash) | This file is larger than 10 MB. Please upload a smaller file. |
+| The file is larger than 10 MB (proposed limit, Avinash to confirm) | This file is larger than 10 MB. Please upload a smaller file. |
 | The file cannot be read as a CSV | We could not read this file as a CSV. Check that the values are separated by commas. |
 | The backend is not running (from Day 6) | We could not reach the analysis server. Check that the backend is running and try again. |
 
@@ -61,5 +61,5 @@ add "and N more". Finish with: "Fix these problems and upload the file again."
 - Colour is always paired with an icon and a word.
 
 ## 8. Open questions for Avinash
-- Is 10 MB the right maximum file size? (20,000 customers is about 1 MB.)
+- Is 10 MB the right maximum file size? (20,000 customers is about 2.5 MB.)
 - Should a warning ask the user to confirm before "Run analysis"?
