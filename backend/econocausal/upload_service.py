@@ -18,7 +18,7 @@ import pandas as pd
 
 from .validation import validate_campaign_data
 
-MAX_UPLOAD_BYTES = 10 * 1024 * 1024   # 10 MB (to be confirmed by Avinash)
+MAX_UPLOAD_BYTES = 10 * 1024 * 1024   # 10 MB (approved by Avinash, 20 Oct 2026)
 PREVIEW_ROWS = 10
 
 

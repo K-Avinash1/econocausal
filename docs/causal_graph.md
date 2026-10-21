@@ -39,5 +39,5 @@ loyalty -> email engagement, past purchases -> days since last purchase.
 `scripts/check_causal_graph.py` asks DoWhy to identify the effect from this graph. DoWhy may pick a smaller valid adjustment set than all 8 attributes; adjusting for all 8 is also valid because none of them is affected by the discount. Output is saved to `docs/dowhy_identification.txt` after Avinash runs the script (not yet run).
 
 ## Open items
-- Avinash to confirm or change the attribute-to-attribute edges.
+- Attribute-to-attribute edges: approved by Avinash on 20 Oct 2026.
 - Day 8: choose which attributes go in X (effect modifiers) and which in W (controls only) when the DML model is built.

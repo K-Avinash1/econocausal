@@ -113,3 +113,28 @@ Generated CSVs, docs/eda_report.md and docs/validation_messages.md must be produ
 
 ### Questions requiring approval
 - Revised schedule above (uses the buffer). 10 MB upload limit. Attribute-to-attribute edges in the causal graph.
+
+---
+
+## Checkpoint 5 - 21 October 2026 (catch-up: Day 4+5 delivered, Day 6+7 package prepared)
+
+### Verified (evidence seen in pasted output / screenshots)
+- Avinash, 20 Oct: `pytest` 46 passed in 4.06 s (Python 3.11.9); `scripts/check_causal_graph.py` ran and DoWhy produced a backdoor estimand adjusting for all 8 attributes; `/health` returned 200; `/validate` responses for `invalid_bad_region.csv` and `sample_valid.csv` matched the contract. Commit 733e4f8; PR #3 merged into main (f739579).
+- Avinash approved on 20 Oct: the attribute-to-attribute edges in `docs/causal_graph.md` and the 10 MB upload limit. (To be recorded in the repo files with his next commit.)
+- Zahra, 21 Oct: React app (Vite) created in `frontend/`; upload page works against the real backend (screenshots for `sample_valid.csv`, `invalid_bad_region.csv`, `invalid_empty.csv`). Commits edb666c and 3afd224 on zahra-dev. Her pull request into main had NOT been opened when last checked (GitHub showed 0 open PRs); GitHub shows 4 closed PRs, of which only 3 are known.
+
+### Prepared 21 Oct, not yet run on the team's machines
+- `docs/model_interface.md` (draft for Avinash), `docs/testing.md`, `README.md` (run instructions), `scripts/smoke_test_api.py` (20 checks; run only in Claude's workspace against a stand-in server and against a deliberately broken one, where it correctly failed).
+
+### Schedule status (revised plan, uses the 25-26 Oct buffer)
+- Days 4+5 close when Zahra's PR is merged. Day 6 is mostly done (`/health`, `/validate`, frontend connection); remaining Day 6 item is Avinash's interface definition (`docs/model_interface.md`). Day 7 = clean-start test and data/causal validation. Day 8 (DML workflow) and Day 9 (first EconML model) follow.
+- Mid-review 27-29 Oct unchanged (the Infotact dashboard date takes precedence).
+
+### Known issues / limitations
+- Dashboard timezone for commit days and the 14-day mid-review window: still not confirmed.
+- Zahra's Python is 3.13.0; the full pinned requirements are tested only with Python 3.11.9.
+- Zahra has no separate "Day 4" commit message (layout and upload page are in her two Day 5 commits).
+
+### Next
+- Avinash: review and merge Zahra's PR; run the smoke test; reproducibility check; approve or edit `docs/model_interface.md`.
+- Zahra: clean-start test in a fresh clone, record it in `docs/clean_start_test.md`.
