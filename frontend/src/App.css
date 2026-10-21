@@ -1,0 +1,166 @@
+.app-header {
+  background: #14304a;
+  color: #ffffff;
+  padding: 16px 24px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.app-header p {
+  margin: 4px 0 0;
+  color: #cfdbe6;
+}
+
+.app-body {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  align-items: flex-start;
+}
+
+.app-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.nav-item {
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid #b8c4cf;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1c2530;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background: #eaf0f6;
+}
+
+.nav-item.active {
+  background: #14304a;
+  border-color: #14304a;
+  color: #ffffff;
+}
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #d5dde5;
+  border-radius: 8px;
+  padding: 20px 24px;
+}
+
+.app-main h2 {
+  margin-top: 0;
+}
+
+.coming-later {
+  color: #4a5a6a;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .app-body {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .app-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+}
+.file-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.file-name {
+  color: #4a5a6a;
+}
+
+.message {
+  border-left: 6px solid;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 14px 0;
+}
+
+.message p,
+.message ul {
+  margin: 6px 0 0;
+}
+
+.message.error {
+  background: #fdecea;
+  border-color: #b3261e;
+  color: #3b0d0a;
+}
+
+.message.warning {
+  background: #fff4e0;
+  border-color: #b26a00;
+  color: #4a2c00;
+}
+
+.message.success {
+  background: #e6f4ea;
+  border-color: #1e7a3c;
+  color: #0b2e17;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 14px 0;
+  border: 1px solid #d5dde5;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+caption {
+  text-align: left;
+  padding: 8px;
+  font-weight: 600;
+}
+
+th,
+td {
+  padding: 6px 10px;
+  border-top: 1px solid #e3e9ef;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background: #eaf0f6;
+}
+
+.run-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #14304a;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.run-button:disabled {
+  background: #9aa8b5;
+  cursor: not-allowed;
+}
