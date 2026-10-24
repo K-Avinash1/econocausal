@@ -138,3 +138,12 @@ Generated CSVs, docs/eda_report.md and docs/validation_messages.md must be produ
 ### Next
 - Avinash: review and merge Zahra's PR; run the smoke test; reproducibility check; approve or edit `docs/model_interface.md`.
 - Zahra: clean-start test in a fresh clone, record it in `docs/clean_start_test.md`.
+
+## Checkpoint 6 (23 Oct 2026, Day 8+9 delivered by Claude, NOT yet run on Avinash's PC)
+- Added `backend/econocausal/effect_model.py`, `scripts/run_first_model.py`, tests
+  `test_effect_model.py` (15, no EconML needed) and `test_effect_model_econml.py` (skipped without EconML),
+  `docs/dml_workflow.md`, decision record 3 in `docs/methodology.md`.
+- Verified in Claude's sandbox only: T-learner path end to end (no EconML there), 15 tests via a stand-in runner.
+- NOT verified: every EconML call. Day 9 is done only when Avinash pastes the `--quick` run output.
+- `data/demo/analysis_demo.json` is a development fixture from the T-learner, not EconML. Replace it
+  with the real export (`--export-demo causal_forest`).

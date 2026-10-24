@@ -98,3 +98,10 @@ Actual results are recorded in `docs/testing.md` only after they have been run.
 - `docs/model_interface.md` - model inputs and outputs (draft)
 - `docs/testing.md` - how to test and the actual test status
 - `WORK_DISTRIBUTION.md` - who owns what
+
+## Run the first model (Day 8-9)
+```
+python scripts/generate_data.py
+python scripts/run_first_model.py --quick
+```
+See `docs/dml_workflow.md`. `--estimators t_learner` runs without EconML.

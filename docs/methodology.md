@@ -47,6 +47,16 @@ the amount paid after the discount, so doing both would double-count the cost.
   incremental contribution under an assumed margin of m%" and shown separately. Until then no
   result may be described as profit.
 
+## Decision record 3: estimator configuration (23 Oct 2026, Day 8)
+
+- Default estimator `CausalForestDML`; baselines `LinearDML` and a T-learner (not DML).
+- Nuisance models: random forests (outcome regressor, treatment classifier), 5-fold cross-fitting.
+- All 8 attributes as effect modifiers (region one-hot); `order_value` and `discount_cost` excluded.
+- Settings are first-run values, not tuned (see `docs/dml_workflow.md`).
+- Success is judged on the simulation by closeness to the true effects of held-out customers,
+  and against the naive treated-vs-untreated difference, never by in-sample fit alone.
+- Status: EconML calls verified only after Avinash's run on his PC (see PROJECT_CONTEXT checkpoint 6).
+
 ## Open items
-- Estimator configuration (Day 8), refutation tests (Day 10), uplift/Qini (Day 12), PSM (Day 16),
+- Refutation tests (Day 10), uplift/Qini (Day 12), PSM (Day 16),
   optimizer constraints (Day 19), drift statistics (Day 23).
