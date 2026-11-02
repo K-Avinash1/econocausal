@@ -1,0 +1,476 @@
+{
+  "run": {
+    "data_source": "synthetic",
+    "n_customers": 20000,
+    "estimator": "causal_forest",
+    "estimator_label": "CausalForestDML (EconML)",
+    "settings": {
+      "estimator": "causal_forest",
+      "n_folds": 3,
+      "nuisance_trees": 50,
+      "nuisance_min_leaf": 20,
+      "effect_trees": 100,
+      "effect_min_leaf": 20,
+      "confidence_level": 0.95,
+      "random_state": 42
+    },
+    "fit_seconds": 5.82,
+    "library_versions": {
+      "python": "3.11.9",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.15.3",
+      "econml": "0.17.0",
+      "dowhy": "0.14"
+    }
+  },
+  "average_effect": {
+    "ate": 0.08390975351380518,
+    "ci_low": -0.01088181454709923,
+    "ci_high": 0.17870132157470958,
+    "confidence_level": 0.95,
+    "meaning": "average change in purchase probability if every customer were offered the discount"
+  },
+  "effect_summary": {
+    "min": -0.07191025025146265,
+    "p05": 0.013106538830052765,
+    "p25": 0.05848040792842997,
+    "median": 0.08734531451249648,
+    "p75": 0.11163131388055006,
+    "p95": 0.14434526626441285,
+    "max": 0.20753345866429984,
+    "share_positive": 0.9744,
+    "share_negative": 0.0256
+  },
+  "customers_total": 20000,
+  "customers_returned": 50,
+  "customers": [
+    {
+      "customer_id": 1,
+      "effect": 0.11968,
+      "effect_low": 0.00562,
+      "effect_high": 0.23373,
+      "baseline_purchase_prob": 0.02651,
+      "expected_list_value": 50.65
+    },
+    {
+      "customer_id": 2,
+      "effect": 0.11225,
+      "effect_low": 0.01845,
+      "effect_high": 0.20605,
+      "baseline_purchase_prob": 0.06622,
+      "expected_list_value": 55.01
+    },
+    {
+      "customer_id": 3,
+      "effect": 0.05696,
+      "effect_low": 0.00359,
+      "effect_high": 0.11032,
+      "baseline_purchase_prob": 0.36625,
+      "expected_list_value": 69.62
+    },
+    {
+      "customer_id": 4,
+      "effect": 0.08023,
+      "effect_low": -0.02643,
+      "effect_high": 0.18688,
+      "baseline_purchase_prob": 0.04232,
+      "expected_list_value": 73.28
+    },
+    {
+      "customer_id": 5,
+      "effect": 0.07808,
+      "effect_low": -0.04472,
+      "effect_high": 0.20088,
+      "baseline_purchase_prob": 0.21291,
+      "expected_list_value": 59.87
+    },
+    {
+      "customer_id": 6,
+      "effect": 0.00866,
+      "effect_low": -0.12567,
+      "effect_high": 0.14299,
+      "baseline_purchase_prob": 0.60128,
+      "expected_list_value": 32.52
+    },
+    {
+      "customer_id": 7,
+      "effect": 0.05252,
+      "effect_low": -0.04038,
+      "effect_high": 0.14542,
+      "baseline_purchase_prob": 0.26987,
+      "expected_list_value": 76.45
+    },
+    {
+      "customer_id": 8,
+      "effect": 0.09921,
+      "effect_low": 0.00178,
+      "effect_high": 0.19665,
+      "baseline_purchase_prob": 0.12739,
+      "expected_list_value": 81.76
+    },
+    {
+      "customer_id": 9,
+      "effect": 0.10407,
+      "effect_low": 0.04944,
+      "effect_high": 0.15869,
+      "baseline_purchase_prob": 0.08203,
+      "expected_list_value": 53.41
+    },
+    {
+      "customer_id": 10,
+      "effect": 0.08531,
+      "effect_low": -0.0347,
+      "effect_high": 0.20532,
+      "baseline_purchase_prob": 0.07664,
+      "expected_list_value": 51.57
+    },
+    {
+      "customer_id": 11,
+      "effect": 0.14145,
+      "effect_low": 0.06469,
+      "effect_high": 0.2182,
+      "baseline_purchase_prob": 0.17599,
+      "expected_list_value": 81.46
+    },
+    {
+      "customer_id": 12,
+      "effect": 0.15925,
+      "effect_low": 0.02267,
+      "effect_high": 0.29584,
+      "baseline_purchase_prob": 0.1312,
+      "expected_list_value": 65.98
+    },
+    {
+      "customer_id": 13,
+      "effect": -0.01895,
+      "effect_low": -0.10231,
+      "effect_high": 0.06441,
+      "baseline_purchase_prob": 0.62749,
+      "expected_list_value": 72.46
+    },
+    {
+      "customer_id": 14,
+      "effect": 0.12898,
+      "effect_low": 0.04991,
+      "effect_high": 0.20805,
+      "baseline_purchase_prob": 0.08354,
+      "expected_list_value": 48.98
+    },
+    {
+      "customer_id": 15,
+      "effect": 0.08459,
+      "effect_low": 0.01599,
+      "effect_high": 0.1532,
+      "baseline_purchase_prob": 0.03856,
+      "expected_list_value": 38.46
+    },
+    {
+      "customer_id": 16,
+      "effect": 0.08407,
+      "effect_low": -0.02829,
+      "effect_high": 0.19642,
+      "baseline_purchase_prob": 0.47033,
+      "expected_list_value": 76.16
+    },
+    {
+      "customer_id": 17,
+      "effect": 0.1019,
+      "effect_low": 0.03024,
+      "effect_high": 0.17356,
+      "baseline_purchase_prob": 0.14094,
+      "expected_list_value": 75.56
+    },
+    {
+      "customer_id": 18,
+      "effect": 0.07057,
+      "effect_low": -0.07065,
+      "effect_high": 0.21178,
+      "baseline_purchase_prob": 0.18195,
+      "expected_list_value": 66.59
+    },
+    {
+      "customer_id": 19,
+      "effect": 0.11739,
+      "effect_low": 0.04519,
+      "effect_high": 0.18959,
+      "baseline_purchase_prob": 0.16773,
+      "expected_list_value": 51.82
+    },
+    {
+      "customer_id": 20,
+      "effect": 0.12518,
+      "effect_low": 0.0017,
+      "effect_high": 0.24867,
+      "baseline_purchase_prob": 0.07812,
+      "expected_list_value": 68.69
+    },
+    {
+      "customer_id": 21,
+      "effect": 0.07858,
+      "effect_low": -0.02437,
+      "effect_high": 0.18152,
+      "baseline_purchase_prob": 0.13493,
+      "expected_list_value": 61.15
+    },
+    {
+      "customer_id": 22,
+      "effect": 0.07707,
+      "effect_low": -0.05257,
+      "effect_high": 0.2067,
+      "baseline_purchase_prob": 0.03546,
+      "expected_list_value": 82.67
+    },
+    {
+      "customer_id": 23,
+      "effect": 0.10013,
+      "effect_low": 0.02812,
+      "effect_high": 0.17214,
+      "baseline_purchase_prob": 0.03531,
+      "expected_list_value": 54.59
+    },
+    {
+      "customer_id": 24,
+      "effect": 0.05439,
+      "effect_low": -0.00072,
+      "effect_high": 0.10951,
+      "baseline_purchase_prob": 0.10743,
+      "expected_list_value": 43.84
+    },
+    {
+      "customer_id": 25,
+      "effect": 0.09806,
+      "effect_low": -0.01942,
+      "effect_high": 0.21553,
+      "baseline_purchase_prob": 0.15228,
+      "expected_list_value": 54.77
+    },
+    {
+      "customer_id": 26,
+      "effect": 0.12714,
+      "effect_low": 0.02611,
+      "effect_high": 0.22818,
+      "baseline_purchase_prob": 0.03553,
+      "expected_list_value": 60.95
+    },
+    {
+      "customer_id": 27,
+      "effect": 0.07153,
+      "effect_low": -0.00473,
+      "effect_high": 0.1478,
+      "baseline_purchase_prob": 0.06061,
+      "expected_list_value": 50.96
+    },
+    {
+      "customer_id": 28,
+      "effect": 0.07382,
+      "effect_low": -0.0617,
+      "effect_high": 0.20933,
+      "baseline_purchase_prob": 0.19287,
+      "expected_list_value": 67.45
+    },
+    {
+      "customer_id": 29,
+      "effect": 0.1014,
+      "effect_low": -0.03446,
+      "effect_high": 0.23726,
+      "baseline_purchase_prob": 0.1051,
+      "expected_list_value": 51.02
+    },
+    {
+      "customer_id": 30,
+      "effect": 0.11634,
+      "effect_low": 0.01505,
+      "effect_high": 0.21764,
+      "baseline_purchase_prob": 0.0338,
+      "expected_list_value": 80.48
+    },
+    {
+      "customer_id": 31,
+      "effect": 0.04805,
+      "effect_low": -0.03347,
+      "effect_high": 0.12957,
+      "baseline_purchase_prob": 0.07025,
+      "expected_list_value": 76.49
+    },
+    {
+      "customer_id": 32,
+      "effect": 0.06165,
+      "effect_low": 0.00503,
+      "effect_high": 0.11827,
+      "baseline_purchase_prob": 0.18896,
+      "expected_list_value": 31.14
+    },
+    {
+      "customer_id": 33,
+      "effect": 0.08383,
+      "effect_low": 0.01337,
+      "effect_high": 0.1543,
+      "baseline_purchase_prob": 0.28592,
+      "expected_list_value": 33.21
+    },
+    {
+      "customer_id": 34,
+      "effect": 0.09438,
+      "effect_low": 0.03525,
+      "effect_high": 0.15351,
+      "baseline_purchase_prob": 0.11629,
+      "expected_list_value": 45.22
+    },
+    {
+      "customer_id": 35,
+      "effect": 0.08874,
+      "effect_low": -0.04203,
+      "effect_high": 0.21951,
+      "baseline_purchase_prob": 0.23881,
+      "expected_list_value": 74.65
+    },
+    {
+      "customer_id": 36,
+      "effect": 0.14781,
+      "effect_low": 0.05624,
+      "effect_high": 0.23937,
+      "baseline_purchase_prob": 0.10715,
+      "expected_list_value": 70.43
+    },
+    {
+      "customer_id": 37,
+      "effect": 0.10731,
+      "effect_low": 0.03686,
+      "effect_high": 0.17776,
+      "baseline_purchase_prob": 0.10878,
+      "expected_list_value": 133.68
+    },
+    {
+      "customer_id": 38,
+      "effect": 0.10778,
+      "effect_low": 0.03962,
+      "effect_high": 0.17594,
+      "baseline_purchase_prob": 0.11854,
+      "expected_list_value": 85.03
+    },
+    {
+      "customer_id": 39,
+      "effect": 0.10192,
+      "effect_low": 0.03888,
+      "effect_high": 0.16497,
+      "baseline_purchase_prob": 0.17164,
+      "expected_list_value": 55.47
+    },
+    {
+      "customer_id": 40,
+      "effect": 0.06916,
+      "effect_low": -0.01366,
+      "effect_high": 0.15198,
+      "baseline_purchase_prob": 0.37227,
+      "expected_list_value": 66.46
+    },
+    {
+      "customer_id": 41,
+      "effect": 0.08481,
+      "effect_low": 0.02128,
+      "effect_high": 0.14834,
+      "baseline_purchase_prob": 0.18328,
+      "expected_list_value": 24.47
+    },
+    {
+      "customer_id": 42,
+      "effect": 0.10979,
+      "effect_low": 0.03955,
+      "effect_high": 0.18003,
+      "baseline_purchase_prob": 0.03297,
+      "expected_list_value": 39.96
+    },
+    {
+      "customer_id": 43,
+      "effect": 0.07761,
+      "effect_low": -0.00167,
+      "effect_high": 0.15689,
+      "baseline_purchase_prob": 0.05292,
+      "expected_list_value": 30.3
+    },
+    {
+      "customer_id": 44,
+      "effect": 0.09854,
+      "effect_low": 0.02134,
+      "effect_high": 0.17573,
+      "baseline_purchase_prob": 0.11014,
+      "expected_list_value": 90.34
+    },
+    {
+      "customer_id": 45,
+      "effect": 0.03235,
+      "effect_low": -0.04287,
+      "effect_high": 0.10757,
+      "baseline_purchase_prob": 0.43691,
+      "expected_list_value": 54.12
+    },
+    {
+      "customer_id": 46,
+      "effect": 0.07753,
+      "effect_low": -0.00817,
+      "effect_high": 0.16323,
+      "baseline_purchase_prob": 0.24964,
+      "expected_list_value": 64.2
+    },
+    {
+      "customer_id": 47,
+      "effect": 0.10225,
+      "effect_low": 0.04071,
+      "effect_high": 0.16379,
+      "baseline_purchase_prob": 0.06627,
+      "expected_list_value": 39.02
+    },
+    {
+      "customer_id": 48,
+      "effect": 0.04816,
+      "effect_low": -0.02012,
+      "effect_high": 0.11644,
+      "baseline_purchase_prob": 0.42427,
+      "expected_list_value": 44.51
+    },
+    {
+      "customer_id": 49,
+      "effect": 0.11395,
+      "effect_low": 0.0256,
+      "effect_high": 0.2023,
+      "baseline_purchase_prob": 0.17101,
+      "expected_list_value": 46.7
+    },
+    {
+      "customer_id": 50,
+      "effect": 0.07786,
+      "effect_low": -0.0661,
+      "effect_high": 0.22183,
+      "baseline_purchase_prob": 0.39223,
+      "expected_list_value": 80.82
+    }
+  ],
+  "notes": [
+    "Estimates assume no unmeasured confounders (see docs/causal_graph.md).",
+    "Effects are changes in purchase probability: 0.07 means 7 percentage points."
+  ],
+  "evaluation": {
+    "n_evaluated": 6000,
+    "true_ate": 0.07241631557922733,
+    "estimated_ate": 0.08392391617116979,
+    "ate_error": 0.01150760059194246,
+    "rmse": 0.03284934165698974,
+    "mae": 0.026296686604651707,
+    "correlation": 0.6947664435903788,
+    "rank_correlation": 0.6491037753639937,
+    "top20_true_effect_mean": 0.10150321011056378,
+    "bottom20_true_effect_mean": 0.02242622608458135,
+    "all_true_effect_mean": 0.07241631557922733,
+    "interval_coverage": 0.9813333333333333,
+    "mean_interval_width": 0.17812277089963943,
+    "naive_difference": 0.14804581544941692,
+    "naive_error": 0.07562949987018959,
+    "label": "Simulation only: compares estimates with the known true effects.",
+    "evaluated_on": "held-out 30% of customers (6000 customers); the model was fitted on the other 14000",
+    "estimator": "causal_forest",
+    "fit_seconds": 6.25,
+    "notes": []
+  }
+}

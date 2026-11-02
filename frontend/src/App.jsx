@@ -1,3 +1,4 @@
+import ResultsPanel from './ResultsPanel'
 import { useState } from 'react'
 import './App.css'
 import UploadPanel from './components/UploadPanel'
@@ -36,9 +37,9 @@ export default function App() {
         </nav>
         <main className="app-main">
           <h2>{current.label}</h2>
-          {current.id === 'upload' ? (
-            <UploadPanel />
-          ) : (
+          {current.id === 'upload' && <UploadPanel />}
+          {current.id === 'effects' && <ResultsPanel />}
+          {current.id !== 'upload' && current.id !== 'effects' && (
             <p className="coming-later">This section is built later in the project.</p>
           )}
         </main>
