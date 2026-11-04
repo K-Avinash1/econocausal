@@ -1,0 +1,82 @@
+{
+  "original_average_effect": 0.08390975351380518,
+  "tolerance_absolute": 0.020977438378451296,
+  "settings": {
+    "estimator": "causal_forest",
+    "n_sims": 3,
+    "seed": 7,
+    "tolerance_fraction": 0.25,
+    "n_customers": 20000,
+    "n_folds": 3
+  },
+  "results": [
+    {
+      "name": "placebo_treatment",
+      "title": "Placebo treatment",
+      "what_it_does": "Randomly shuffles which customers were offered the discount, then re-estimates the average effect.",
+      "expected": "A shuffled discount has no real effect, so the estimate should be close to 0.",
+      "original_average_effect": 0.08390975351380518,
+      "re_estimates": [
+        -0.002299549621104264,
+        0.0130159598355516,
+        0.010200546385033012
+      ],
+      "deviations": [
+        0.002299549621104264,
+        0.0130159598355516,
+        0.010200546385033012
+      ],
+      "passed": true,
+      "criterion": "every placebo average effect must be within +/-0.0210 of 0 (25% of the original effect)",
+      "seconds": 13.0
+    },
+    {
+      "name": "random_common_cause",
+      "title": "Random common cause",
+      "what_it_does": "Adds a column of random noise as an extra customer attribute, then re-estimates.",
+      "expected": "Noise cannot matter, so the average effect should barely change.",
+      "original_average_effect": 0.08390975351380518,
+      "re_estimates": [
+        0.08428352963552317,
+        0.08510793497250052,
+        0.08281232520006081
+      ],
+      "deviations": [
+        0.00037377612171798913,
+        0.0011981814586953382,
+        0.0010974283137443752
+      ],
+      "passed": true,
+      "criterion": "every re-estimate must be within +/-0.0210 of the original (25% of the original effect)",
+      "seconds": 16.1
+    },
+    {
+      "name": "data_subset",
+      "title": "Data subset",
+      "what_it_does": "Re-estimates on random 80% subsets of the customers.",
+      "expected": "A stable result should not change much when 20% of the customers are left out.",
+      "original_average_effect": 0.08390975351380518,
+      "re_estimates": [
+        0.07953091168243984,
+        0.08675992454322508,
+        0.07853139292766023
+      ],
+      "deviations": [
+        0.004378841831365346,
+        0.0028501710294198956,
+        0.005378360586144951
+      ],
+      "passed": true,
+      "criterion": "every re-estimate must be within +/-0.0210 of the original (25% of the original effect)",
+      "seconds": 10.3
+    }
+  ],
+  "n_passed": 3,
+  "n_failed": 0,
+  "n_inconclusive": 0,
+  "total_seconds": 46.1,
+  "not_done": [
+    "Sensitivity to an unmeasured confounder (cannot be ruled out from the data)."
+  ],
+  "disclaimer": "Passing these tests does not prove the causal assumptions. They can reveal problems (for example an unstable estimate) but cannot rule out unmeasured confounders."
+}
