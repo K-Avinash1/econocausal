@@ -351,6 +351,17 @@ def to_jsonable(value):
     return value
 
 
+def customer_rows(customers: pd.DataFrame) -> List[Dict]:
+    """Rows as dicts with sensible rounding (effects 5 decimals, list value 2)."""
+    rounding = {"effect": 5, "effect_low": 5, "effect_high": 5,
+                "baseline_purchase_prob": 5, "expected_list_value": 2}
+    rows = []
+    for record in customers.to_dict(orient="records"):
+        rows.append({key: (round(record[key], rounding[key]) if key in rounding and pd.notna(record[key])
+                           else record[key]) for key in record})
+    return rows
+
+
 @dataclass
 class EffectResult:
     """Everything one analysis run produces. `customers` has one row per customer."""
@@ -363,13 +374,7 @@ class EffectResult:
 
     def to_dict(self, max_customers: int = 100, evaluation: Optional[Dict] = None) -> Dict:
         """JSON-safe dict (shape in docs/dml_workflow.md). Customers are the first `max_customers` by id."""
-        sample = self.customers.sort_values(ID_COL).head(max_customers)
-        rounding = {"effect": 5, "effect_low": 5, "effect_high": 5,
-                    "baseline_purchase_prob": 5, "expected_list_value": 2}
-        rows = []
-        for record in sample.to_dict(orient="records"):
-            rows.append({key: (round(record[key], rounding[key]) if key in rounding and pd.notna(record[key])
-                               else record[key]) for key in record})
+        rows = customer_rows(self.customers.sort_values(ID_COL).head(max_customers))
         out = {
             "run": self.run,
             "average_effect": self.average_effect,
