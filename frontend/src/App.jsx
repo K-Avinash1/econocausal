@@ -1,3 +1,4 @@
+import RefutationPanel from './RefutationPanel'
 import ResultsPanel from './ResultsPanel'
 import { useState } from 'react'
 import './App.css'
@@ -39,7 +40,8 @@ export default function App() {
           <h2>{current.label}</h2>
           {current.id === 'upload' && <UploadPanel />}
           {current.id === 'effects' && <ResultsPanel />}
-          {current.id !== 'upload' && current.id !== 'effects' && (
+          {current.id === 'validation' && <RefutationPanel runId={null} />}
+          {!['upload', 'effects', 'validation'].includes(current.id) && (
             <p className="coming-later">This section is built later in the project.</p>
           )}
         </main>
